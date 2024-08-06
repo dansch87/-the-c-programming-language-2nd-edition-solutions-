@@ -7,6 +7,7 @@ void minprintf(char *fmt, ...);
 
 int main(void) {
     minprintf("%d, %d\n", 1, 2);
+    minprintf("%c\n", 'a');
     return 0;
 }
 
@@ -23,6 +24,8 @@ void minprintf(char *fmt, ...) {
             putchar(*p);
             continue;
         }
+
+        // look one character ahead
         switch(*++p) {
             case 'd':
                 ival = va_arg(ap, int);
@@ -36,6 +39,10 @@ void minprintf(char *fmt, ...) {
                 for (sval = va_arg(ap, char *); *sval; sval++) {
                     putchar(*sval);
                 }
+                break;
+            case 'c':
+                ival = va_arg(ap, int);
+                printf("%c", ival);
                 break;
             default:
                 putchar(*p);
