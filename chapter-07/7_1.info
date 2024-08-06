@@ -1,0 +1,5 @@
+gcc -o main 7_1.c
+
+# Execute as follows:
+bash -c "exec -a lower ./main"
+bash -c "exec -a upper ./main"
