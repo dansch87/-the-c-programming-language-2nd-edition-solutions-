@@ -1,1 +1,1 @@
-# the-c-programming-language-2nd-edition-solutions-
+# Solutions for "The C Programming Language (2nd ed.)" Exercises
