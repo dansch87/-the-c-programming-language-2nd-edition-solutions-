@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* QUESTIONS
+/* EXERCISE
+ * Write a program to compare two files, printing the first line where they differ.
+ *
+ * QUESTIONS
  * - getline() saves '\n' character to line buffer; is it possible to change that behaviour?
  *
  * TODO:
@@ -11,6 +14,7 @@
 
 
 int main(int argc, char **argv) {
+
 
     FILE *fp1, *fp2;
     char *file1, *file2;
@@ -24,8 +28,9 @@ int main(int argc, char **argv) {
     // check if enough arguments are served to command
     if (argc != 3) {
         fprintf(stderr, "%s: Not enough arguments. Two files are expected as command arguments.\n", prog);
-        exit(1);
+        exit(EXIT_FAILURE);
     }
+
     file1 = *++argv;
     file2 = *++argv;
 
@@ -40,7 +45,6 @@ int main(int argc, char **argv) {
         fprintf(stderr, "%s: Couldn't read file %s\n", prog, *argv);
         exit(3);
     }
-
 
     while (1) {
        ++line_count;
